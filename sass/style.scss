@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap");
+
+*,
+*::after,
+*::before {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+$main-font: 'Poppins', sans-serif;
+$super-color: #e52e71; 
+$second-color:#ff8a00;
+$white-color: #fff;
+$black-color: #000;
+$delete-color: rgb(236, 41, 41) ;     
+$complete-color: #4d9138;
+$color-button-complete-before: #52e624;
+$colorbutton: #ff6f47;
+
+
+
+html {
+    font-size: 10px;
+}
+
+
+body {
+    
+    min-height: 100vh;
+    background-image: linear-gradient(60deg, $white-color, $second-color, $super-color, $black-color);
+    color:$white-color;
+    font-family: $main-font;
+}
+
+.header {
+    font-size: 1.5rem;
+    &__heading{
+        min-height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.todo {
+    display: flex;
+    min-height: 20vh;
+    justify-content: center;
+    align-items: center;
+    &__input,  &__button {
+        
+        font-size: 2rem;;    
+        padding: 0.5rem;
+        border: none;
+        background-color:$white-color;
+            
+    }
+    &__button {
+        color: $white-color;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.15s ease-in, color 0.15s ease-in ;
+            &--squere  {
+            color: $second-color;
+            background: $white-color;
+                &:hover {
+                    background-color: $second-color;
+                    color: $white-color;
+                }
+        }   &--btndelete {
+            // pointer-events: none;
+            font-size: 1rem;
+            padding: 0.8rem;
+            background-color: $colorbutton;
+                &:hover {
+                    background-color: $delete-color;
+                }
+            }
+            &--btncomplete {
+                // pointer-events: none;
+                font-size: 1rem;
+                padding: 0.8rem;
+                background-color: $color-button-complete-before;
+                &:hover {
+                    background-color:$complete-color ;
+                }
+            }
+    }
+    
+}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo-section {
+    margin: 0.5rem;
+    background: $white-color;
+    color: $black-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.5s ease, transform 0.5s ease-in;
+    &__item {
+        flex: 1;
+        padding: 0rem 0.5rem;
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.fall {
+    transform:  translateX(30rem) ;  //rotateZ(20deg);
+    opacity: 0;
+}
+
+.select  {
+        
+        margin : 1rem;
+        position: relative;
+        overflow: hidden;
+    &__filter {
+        appearance: none;
+        outline: none;
+        border: none;
+        color: $second-color;
+        width: 10rem;
+        cursor: pointer;
+        padding: 0.9rem;
+        
+        
+    }
+    &::after {
+        content: "\25BC";
+        background-color: $second-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1rem;
+        pointer-events: none;
+        transition: background 0.3s ease-in, color 0.3s ease-in;
+    }
+    &:hover {
+        &::after {
+            background: white;
+            color: $second-color;
+        }
+    }
+}
+
+.display_flex {
+    display: flex;
+}
+.none {
+    display: none;
+}
