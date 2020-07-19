@@ -131,11 +131,12 @@ body {
         position: relative;
         overflow: hidden;
     &__filter {
+        
         appearance: none;
         outline: none;
         border: none;
         color: $second-color;
-        width: 10rem;
+        width: 12rem;
         cursor: pointer;
         padding: 0.9rem;
         
